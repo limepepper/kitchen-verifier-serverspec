@@ -134,7 +134,7 @@ module Kitchen
             if [ ! $(which ruby) ]; then
               echo '-----> Installing ruby, will try to determine platform os'
               if [ -f /etc/centos-release ] || [ -f /etc/redhat-release ] || [ -f /etc/oracle-release ]; then
-                #{sudo_env('yum')} -y install ruby
+                #{sudo_env('yum')} -y install ruby rubygems
               else
                 if [ -f /etc/system-release ] && grep -q 'Amazon Linux' /etc/system-release; then
                   #{sudo_env('yum')} -y install ruby
